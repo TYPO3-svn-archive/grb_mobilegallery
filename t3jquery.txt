@@ -1,0 +1,2 @@
+script=Resources/Public/Javascripts/grb_mobilegallery.js
+components=jQuery,noConflict

@@ -1,0 +1,14 @@
+plugin.tx_grbmobilegallery {
+	view {
+		# cat=plugin.tx_grbmobilegallery/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:grb_mobilegallery/Resources/Private/Templates/
+		# cat=plugin.tx_grbmobilegallery/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:grb_mobilegallery/Resources/Private/Partials/
+		# cat=plugin.tx_grbmobilegallery/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:grb_mobilegallery/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_grbmobilegallery//a; type=int+; label=Default storage PID
+		storagePid >
+	}
+}

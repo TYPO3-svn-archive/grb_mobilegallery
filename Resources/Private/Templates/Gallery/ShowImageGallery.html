@@ -1,0 +1,67 @@
+<f:layout name="default" />
+<f:section name="main">
+
+<f:flashMessages />
+
+<div id="grb_mobilegallery-image">
+	<div class="grb_mobilegallery-image">
+		
+		<script src="{f:uri.resource(path:'Javascripts/grb_mobilegallery.js')}" type="text/javascript"></script> 
+		<script type="text/javascript">
+			var getNextImage 	= "<f:uri.action action='showImageGallery' additionalParams='{type:1297790338,L:sysLanguageUid}' arguments='{position:next,pid:pid}'/>";	
+			var getPreviewImage = "<f:uri.action action='showImageGallery' additionalParams='{type:1297790338,L:sysLanguageUid}' arguments='{position:preview,pid:pid}'/>";	
+		</script>
+		
+		<f:image 	src="uploads/pics/{image}" 
+					width="{settings.imageGallery.width}" 
+					alt="grb_mobilegallery" />
+					
+		<div class="grb_mobilegallery-imagecaption">{caption}</div>
+		
+		<div class="grb_mobilegallery-navigation">
+			<div class="grb_mobilegallery-navigation-preview">
+				<f:if condition="{position} > 1">
+					<!-- DEFAULT-Link -->
+					<span class="grb_mobilegallery-navigation-default">
+						<f:link.action action="showImageGallery" arguments="{position:preview,pid:pid}">
+							<f:translate key="tx_grbmobilegallery_domain_model_content.image.preview" />
+						</f:link.action>
+					</span>
+					<!-- AJAX-Link -->
+					<span class="grb_mobilegallery-navigation-ajax">
+						<a onclick="grbMobilegalleryGetNextImage(getPreviewImage)">
+							<f:translate key="tx_grbmobilegallery_domain_model_content.image.preview" />
+						</a>
+					</span>	
+				</f:if>
+			</div>
+			
+			<div class="grb_mobilegallery-navigation-counter">
+				{position}/{count}
+			</div>
+			
+			<div class="grb_mobilegallery-navigation-next">
+				<f:if condition="{position} < {count}">
+					<!-- DEFAULT-Link -->
+					<span class="grb_mobilegallery-navigation-default">
+						<f:link.action action="showImageGallery" arguments="{position:next,pid:pid}">
+							<f:translate key="tx_grbmobilegallery_domain_model_content.image.next" />
+						</f:link.action>
+					</span>
+					<!-- AJAX-Link -->
+					<span class="grb_mobilegallery-navigation-ajax">
+						<a onclick="grbMobilegalleryGetNextImage(getNextImage)">
+							<f:translate key="tx_grbmobilegallery_domain_model_content.image.next" />
+						</a>	
+					</span>
+				</f:if>	
+			</div>
+		</div>
+		
+		<div id="grbmobilegallery_ajax_loading">
+			<img src="typo3conf/ext/grb_mobilegallery/Resources/Public/Images/tx_grbmobilegallery_ajax_loading.gif" width="128" height="15" />
+		</div>		
+	</div>
+</div>
+	
+</f:section>

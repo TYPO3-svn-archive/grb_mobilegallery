@@ -1,0 +1,27 @@
+<f:layout name="default" />
+<f:section name="main">
+
+<f:flashMessages />
+
+
+{namespace h5v=Tx_Html5videoplayer_ViewHelpers}
+
+<!-- Include the VideoJS Library -->
+<script src="{f:uri.resource(path:'JavaScript/video.js')}" type="text/javascript" charset="utf-8"></script>
+
+<!-- Include the VideoJS Stylesheet -->
+<link rel="stylesheet" href="{f:uri.resource(path:'CSS/video-js.css')}" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="{f:uri.resource(path:'CSS/tube.css')}" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="{f:uri.resource(path:'CSS/hu.css')}" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="{f:uri.resource(path:'CSS/vim.css')}" type="text/css" media="screen" charset="utf-8" />
+
+
+<f:flashMessages class="html5videoplayer flashmessage" />
+
+<f:for each="{videos}" as="v">
+	<div class="grb_mobilegallery-video">
+		<f:render partial="Videoplayer/Entry" arguments="{video:v}" />
+	</div>
+</f:for>		
+		
+</f:section>

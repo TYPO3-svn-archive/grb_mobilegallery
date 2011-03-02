@@ -1,0 +1,36 @@
+{namespace h5v=Tx_Html5videoplayer_ViewHelpers}
+
+<!-- Begin VideoJS -->
+<div class="video-js-box">
+    <video id="video_{video.uid}" class="video-js" width="290px" height="170px"<f:if condition="{video.preloadvideo}"> preload</f:if><f:if condition="{video.autoplayvideo}"> autoplay</f:if><f:if condition="{video.posterimage}"> poster="{video.posterimage}"</f:if> controls>
+		<f:if condition="{video.mp4source}"><source src="{video.mp4source}" type="video/mp4" /></f:if>
+		<f:if condition="{video.webmsource}"><source src="{video.webmsource}" type="video/webm" /></f:if>
+		<f:if condition="{video.oggsource}"><source src="{video.oggsource}" type="video/ogg" /></f:if>
+		<object class="vjs-flash-fallback" width="290px" height="170px" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf">
+			<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf" />
+			<param name="allowfullscreen" value="true" />
+			<h5v:flashparam value="{video.flashvsmp4source}" imgfallback="{video.posterimage}" />
+			<img src="{video.posterimage}" width="290px" height="170px" alt="Poster Image"	 title="No video playback capabilities. {video.title}" />
+		</object>
+	</video>
+	<p class="vjs-no-video">
+		<f:if condition="{video.downloadlinks}">
+			<strong>Download "{video.title}"-Video:</strong>
+			<f:if condition="{video.mp4source}"><a href="{video.mp4source}">MP4</a>,</f:if>
+			<f:if condition="{video.webmsource}"><a href="{video.webmsource}">WebM</a>,</f:if>
+			<f:if condition="{video.oggsource}"><a href="{video.oggsource}">Ogg</a></f:if><br />
+		</f:if>
+		<f:if condition="{video.supportvideojs}">
+			<a href="http://videojs.com/">HTML5 Video Player</a> by VideoJS
+		</f:if>
+	</p>
+</div>
+<!-- End VideoJS -->
+
+<script type="text/javascript" charset="utf-8">
+VideoJS.DOMReady(function(){
+	VideoJS.setup("video_{video.uid}", {
+		// Same options
+	});
+});
+</script>

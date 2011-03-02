@@ -1,0 +1,91 @@
+/** *****************************************************
+ * Image-Gallery
+ ****************************************************** */
+
+#grb_mobilegallery-image{
+	min-height:200px;
+}
+.grb_mobilegallery-image{
+	margin-bottom:20px;
+	position:relative;
+}
+
+.grb_mobilegallery-imagecaption{
+	margin-top: 10px;
+}
+
+.grb_mobilegallery-navigation{
+	width: 290px;	
+	font-size: 16px;
+	margin-bottom: 5px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+.grb_mobilegallery-navigation-preview{
+	float:left;
+	width: 100px;
+	min-height:1px;
+	white-space: nowrap;
+	color: #36b7e5;
+}
+
+.grb_mobilegallery-navigation-preview a,
+.grb_mobilegallery-navigation-preview a:visited{
+	padding-left: 17px;
+	background: url(../../../../../../fileadmin/images/ac_left_hellblau_13px.gif) no-repeat 0px 0px #ffffff;
+}
+
+.grb_mobilegallery-navigation-preview a:hover{
+	color: #1f6680;
+	background: url(../../../../../../fileadmin/images/ac_left_dunkelblau_13px.gif) no-repeat 0px 0px #ffffff;
+}
+
+.grb_mobilegallery-navigation-next{
+	float:right;
+	text-align:right;
+	white-space: nowrap;
+	width: 80px;
+	color: #36b7e5;
+}
+
+.grb_mobilegallery-navigation-next a,
+.grb_mobilegallery-navigation-next a:visited{
+	padding-right: 17px;
+	background: url(../../../../../../fileadmin/images/ac_pfeil_hellblau_13px.gif) no-repeat 100% 0px #ffffff;
+}
+
+.grb_mobilegallery-navigation-next a:hover{
+	color: #1f6680;
+	background: url(../../../../../../fileadmin/images/ac_pfeil_dunkelblau_13px.gif) no-repeat 100% 0px #ffffff;
+}
+
+.grb_mobilegallery-navigation-counter{
+	float:left;
+	text-align:center;
+	width: 90px;
+}
+
+.grb_mobilegallery-navigation-ajax{
+	display: none;
+	cursor:hand;
+}
+
+.grb_mobilegallery-navigation-ajax:hover{
+	cursor:hand;
+}
+
+#grbmobilegallery_ajax_loading{
+	position:absolute;
+	top:100px;
+	left: 80px;
+	display:none;
+}
+
+/** *****************************************************
+ * Video-Gallery
+ ****************************************************** */
+
+ .grb_mobilegallery-video{
+ 	margin-bottom: 20px;
+ }
